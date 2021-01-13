@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_create_user"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="jp.co.casareal.navigationcomponentregisteruser.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_inputNewUserFragment"
+            app:destination="@id/navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="jp.co.casareal.navigationcomponentregisteruser.welcome.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/inputNewUserFragment">
+        <fragment
+            android:id="@+id/inputNewUserFragment"
+            android:name="jp.co.casareal.navigationcomponentregisteruser.register.InputNewUserFragment"
+            android:label="InputNewUserFragment">
+            <action
+                android:id="@+id/action_inputNewUserFragment_to_newUserConfirmationFragment"
+                app:destination="@id/newUserConfirmationFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/completeToRegisterUserFragment"
+            android:name="jp.co.casareal.navigationcomponentregisteruser.register.CompleteToRegisterUserFragment"
+            android:label="fragment_complete_to_register_user"
+            tools:layout="@layout/fragment_complete_to_register_user">
+            <action
+                android:id="@+id/action_completeToRegisterUserFragment_to_loginFragment"
+                app:destination="@id/loginFragment"
+                app:popUpTo="@id/loginFragment"
+                app:popUpToInclusive="true"/>
+        </fragment>
+        <fragment
+            android:id="@+id/newUserConfirmationFragment"
+            android:name="jp.co.casareal.navigationcomponentregisteruser.register.NewUserConfirmationFragment"
+            android:label="fragment_new_user_confirmation"
+            tools:layout="@layout/fragment_new_user_confirmation">
+            <action
+                android:id="@+id/action_newUserConfirmationFragment_to_completeToRegisterUserFragment"
+                app:destination="@id/completeToRegisterUserFragment" />
+        </fragment>
+    </navigation>
+</navigation>
