@@ -24,6 +24,9 @@ class InputNewUserFragment : Fragment() {
         val navController = findNavController()
 
         requireActivity().findViewById<Button>(R.id.btn_register).setOnClickListener {
+
+            // 何かしらの入力チェックが行われた上で、確認画面に遷移する
+
             val action =
                 InputNewUserFragmentDirections.actionInputNewUserFragmentToNewUserConfirmationFragment()
 

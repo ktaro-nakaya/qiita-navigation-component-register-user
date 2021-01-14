@@ -16,6 +16,7 @@ class CompleteToRegisterUserFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        // 戻るボタンを押下されても、ログイン画面に戻るようにこの画面のライフサイクル中の戻るボタンのコールバックを変更
         requireActivity().onBackPressedDispatcher.addCallback(this) {
             val navController = findNavController()
             val action =

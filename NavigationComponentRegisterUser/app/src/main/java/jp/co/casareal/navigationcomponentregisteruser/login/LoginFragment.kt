@@ -18,7 +18,6 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
@@ -28,7 +27,10 @@ class LoginFragment : Fragment() {
 
         val navController = findNavController()
 
+        // ログインしたあとのウェルカム画面に遷移
         requireActivity().findViewById<Button>(R.id.btn_login).setOnClickListener {
+
+            // 何かしらのログイン処理を行って画面遷移
 
             val action =
                 LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
@@ -36,8 +38,8 @@ class LoginFragment : Fragment() {
             navController.navigate(action)
         }
 
+        // 新規登録画面に遷移
         requireActivity().findViewById<TextView>(R.id.txt_create_user).setOnClickListener {
-
 
             val action =
                 LoginFragmentDirections.actionLoginFragmentToInputNewUserFragment()

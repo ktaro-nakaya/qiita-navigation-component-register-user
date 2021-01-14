@@ -9,7 +9,7 @@
         android:id="@+id/loginFragment"
         android:name="jp.co.casareal.navigationcomponentregisteruser.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
@@ -22,7 +22,8 @@
         android:name="jp.co.casareal.navigationcomponentregisteruser.welcome.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" />
-    <navigation android:id="@+id/navigation"
+    <navigation
+        android:id="@+id/navigation"
         app:startDestination="@id/inputNewUserFragment">
         <fragment
             android:id="@+id/inputNewUserFragment"
@@ -41,7 +42,7 @@
                 android:id="@+id/action_completeToRegisterUserFragment_to_loginFragment"
                 app:destination="@id/loginFragment"
                 app:popUpTo="@id/loginFragment"
-                app:popUpToInclusive="true"/>
+                app:popUpToInclusive="true" />
         </fragment>
         <fragment
             android:id="@+id/newUserConfirmationFragment"
@@ -51,6 +52,15 @@
             <action
                 android:id="@+id/action_newUserConfirmationFragment_to_completeToRegisterUserFragment"
                 app:destination="@id/completeToRegisterUserFragment" />
+
+            <argument
+                android:name="userName"
+                android:defaultValue="sampleUserName"
+                app:argType="string" />
+            <argument
+                android:name="password"
+                android:defaultValue="password"
+                app:argType="string" />
         </fragment>
     </navigation>
 </navigation>
